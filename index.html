@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ SPEED READING COMPLETE - 500 Kata Tambahan (501-1000)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 20px;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            backdrop-filter: blur(10px);
+            border: 3px solid #ffd700;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 3.5em;
+            color: #ffd700;
+            text-shadow: 4px 4px 0 #1e3c72;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            font-size: 1.5em;
+            color: #fff;
+            background: #2a5298;
+            padding: 15px;
+            border-radius: 50px;
+            margin-bottom: 30px;
+            font-weight: bold;
+            border: 3px solid #ffd700;
+        }
+        
+        .rule-box {
+            background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
+            color: #1e3c72;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.3em;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border: 2px solid #fff;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .rhyme-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 3px solid #ffd700;
+            transition: transform 0.3s ease;
+        }
+        
+        .rhyme-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
+            border-color: #2a5298;
+        }
+        
+        .rhyme-title {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #ffd700;
+            padding: 12px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: bold;
+            font-size: 1.4em;
+            border: 2px solid #ffd700;
+        }
+        
+        .rhyme-sound {
+            font-size: 1.5em;
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-weight: bold;
+            background: #fff0d0;
+            padding: 5px 15px;
+            border-radius: 30px;
+            display: inline-block;
+            border-left: 5px solid #ffd700;
+        }
+        
+        .word-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 5px;
+        }
+        
+        .word-list::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .word-list::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .word-list::-webkit-scrollbar-thumb {
+            background: #2a5298;
+            border-radius: 10px;
+        }
+        
+        .word-item {
+            background: #f7fafc;
+            padding: 8px 12px;
+            border-radius: 25px;
+            font-size: 0.95em;
+            border: 1px solid #2a5298;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            flex: 0 0 auto;
+        }
+        
+        .word-item:hover {
+            background: #ffd700;
+            color: #000;
+            transform: scale(1.05);
+            border-color: #1e3c72;
+        }
+        
+        .word-item .number {
+            color: #2a5298;
+            font-weight: bold;
+            font-size: 0.85em;
+            margin-right: 4px;
+        }
+        
+        .word-item .word {
+            font-weight: bold;
+            color: #1e3c72;
+        }
+        
+        .word-item .pronoun {
+            color: #718096;
+            font-size: 0.85em;
+            margin-left: 5px;
+            font-style: italic;
+        }
+        
+        .word-item .meaning {
+            color: #2a5298;
+            font-size: 0.8em;
+            margin-left: 5px;
+            background: #e6f0ff;
+            padding: 2px 5px;
+            border-radius: 12px;
+        }
+        
+        .tip-box {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            color: #ffd700;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.3em;
+            border: 3px solid #ffd700;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #fff;
+            font-size: 1.1em;
+            background: #1e3c72;
+            padding: 20px;
+            border-radius: 50px;
+            border: 3px solid #ffd700;
+        }
+        
+        .stats {
+            text-align: center;
+            background: #ffd700;
+            color: #1e3c72;
+            padding: 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            border: 3px solid #2a5298;
+        }
+        
+        .progress-bar {
+            background: #2a5298;
+            height: 10px;
+            border-radius: 10px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .progress-fill {
+            background: #ffd700;
+            width: 100%;
+            height: 10px;
+            border-radius: 10px;
+            animation: glow 2s ease-in-out infinite;
+        }
+        
+        @keyframes glow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5em; }
+            .container { padding: 15px; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>⚡ SPEED READING COMPLETE</h1>
+    <div class="subtitle">500 Kata Tambahan • 501-1000 • 20 Kelompok Irama</div>
+    
+    <div class="rule-box">
+        🎯 TOTAL 1000 KATA • 20 KELOMPOK IRAMA • LENGKAP UNTUK LATIHAN MAKSIMAL
+    </div>
+    
+    <div class="stats">
+        📊 Bagian 2 dari 2 • Kata 501 - 1000
+    </div>
+    
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+
+    <div class="grid">
+        <!-- Kelompok 1: Irama U: (Ooo...) - 501-525 -->
+        <div class="rhyme-card">
+            <div class="rhyme-title">🎵 Kelompok 1</div>
+            <div class="rhyme-sound">/uː/ - U: Panjang (Ooo...)</div>
+            <div class="word-list">
+                <span class="word-item"><span class="number">501.</span> <span class="word">Room</span> <span class="pronoun">/ruːm/</span> <span class="meaning">(ruang)</span></span>
+                <span class="word-item"><span class="number">502.</span> <span class="word">Bloom</span> <span class="pronoun">/bluːm/</span> <span class="meaning">(mekar)</span></span>
+                <span class="word-item"><span class="number">503.</span> <span class="word">Groom</span> <span class="pronoun">/ɡruːm/</span> <span class="meaning">(mempelai pria)</span></span>
+                <span class="word-item"><span class="number">504.</span> <span class="word">Proof</span> <span class="pronoun">/pruːf/</span> <span class="meaning">(bukti)</span></span>
+                <span class="word-item"><span class="number">505.</span> <span class="word">Roof</span> <span class="pronoun">/ruːf/</span> <span class="meaning">(atap)</span></span>
+                <span class="word-item"><span class="number">506.</span> <span class="word">Zoom</span> <span class="pronoun">/zuːm/</span> <span class="meaning">(memperbesar)</span></span>
+                <span class="word-item"><span class="number">507.</span> <span class="word">Scoop</span> <span class="pronoun">/skuːp/</span> <span class="meaning">(sendok besar)</span></span>
+                <span class="word-item"><span class="number">508.</span> <span class="word">Troop</span> <span class="pronoun">/truːp/</span> <span class="meaning">(pasukan)</span></span>
+                <span class="word-item"><span class="number">509.</span> <span class="word">Goose</span> <span class="pronoun">/ɡuːs/</span> <span class="meaning">(angsa)</span></span>
+                <span class="word-item"><span class="number">510.</span> <span class="word">Loose</span> <span class="pronoun">/luːs/</span> <span class="meaning">(longgar)</span></span>
+                <span class="word-item"><span class="number">511.</span> <span class="word">Moose</span> <span class="pronoun">/muːs/</span> <span class="meaning">(rusa besar)</span></span>
+                <span class="word-item"><span class="number">512.</span> <span class="word">Smooth</span> <span class="pronoun">/smuːð/</span> <span class="meaning">(halus)</span></span>
+                <span class="word-item"><span class="number">513.</span> <span class="word">Tooth</span> <span class="pronoun">/tuːθ/</span> <span class="meaning">(gigi)</span></span>
+                <span class="word-item"><span class="number">514.</span> <span class="word">Youth</span> <span class="pronoun">/juːθ/</span> <span class="meaning">(pemuda)</span></span>
+                <span class="word-item"><span class="number">515.</span> <span class="word">Truth</span> <span class="pronoun">/truːθ/</span> <span class="meaning">(kebenaran)</span></span>
+                <span class="word-item"><span class="number">516.</span> <span class="word">Choose</span> <span class="pronoun">/tʃuːz/</span> <span class="meaning">(memilih)</span></span>
+                <span class="word-item"><span class="number">517.</span> <span class="word">Shoot</span> <span class="pronoun">/ʃuːt/</span> <span class="meaning">(menembak)</span></span>
+                <span class="word-item"><span class="number">518.</span> <span class="word">Route</span> <span class="pronoun">/ruːt/</span> <span class="meaning">(rute)</span></span>
+                <span class="word-item"><span class="number">519.</span> <span class="word">Flute</span> <span class="pronoun">/fluːt/</span> <span class="meaning">(seruling)</span></span>
+                <span class="word-item"><span class="number">520.</span> <span class="word">Brute</span> <span class="pronoun">/bruːt/</span> <span class="meaning">(brutal)</span></span>
+                <span class="word-item"><span class="number">521.</span> <span class="word">June</span> <span class="pronoun">/dʒuːn/</span> <span class="meaning">(Juni)</span></span>
+                <span class="word-item"><span class="number">522.</span> <span class="word">Rule</span> <span class="pronoun">/ruːl/</span> <span class="meaning">(aturan)</span></span>
+                <span class="word-item"><span class="number">523.</span> <span class="word">Rude</span> <span class="pronoun">/ruːd/</span> <span class="meaning">(kasar)</span></span>
+                <span class="word-item"><span class="number">524.</span> <span class="word">Tune</span> <span class="pronoun">/tjuːn/</span> <span class="meaning">(nada)</span></span>
+                <span class="word-item"><span class="number">525.</span> <span class="word">Huge</span> <span class="pronoun">/hjuːdʒ/</span> <span class="meaning">(besar sekali)</span></span>
+            </div>
+        </div>
+
+        <!-- Kelompok 2: Irama I: (Iii...) - 526-550 -->
+        <div class="rhyme-card">
+            <div class="rhyme-title">🎵 Kelompok 2</div>
+            <div class="rhyme-sound">/iː/ - I: Panjang (Iii...)</div>
+            <div class="word-list">
+                <span class="word-item"><span class="number">526.</span> <span class="word">Sweet</span> <span class="pronoun">/swiːt/</span> <span class="meaning">(manis)</span></span>
+                <span class="word-item"><span class="number">527.</span> <span class="word">Sheet</span> <span class="pronoun">/ʃiːt/</span> <span class="meaning">(lembaran)</span></span>
+                <span class="word-item"><span class="number">528.</span> <span class="word">Street</span> <span class="pronoun">/striːt/</span> <span class="meaning">(jalan)</span></span>
+                <span class="word-item"><span class="number">529.</span> <span class="word">Speed</span> <span class="pronoun">/spiːd/</span> <span class="meaning">(kecepatan)</span></span>
+                <span class="word-item"><span class="number">530.</span> <span class="word">Weed</span> <span class="pronoun">/wiːd/</span> <span class="meaning">(gulma)</span></span>
+                <span class="word-item"><span class="number">531.</span> <span class="word">Feed</span> <span class="pronoun">/fiːd/</span> <span class="meaning">(memberi makan)</span></span>
+                <span class="word-item"><span class="number">532.</span> <span class="word">Seed</span> <span class="pronoun">/siːd/</span> <span class="meaning">(biji)</span></span>
+                <span class="word-item"><span class="number">533.</span> <span class="word">Need</span> <span class="pronoun">/niːd/</span> <span class="meaning">(butuh)</span></span>
+                <span class="word-item"><span class="number">534.</span> <span class="word">Beef</span> <span class="pronoun">/biːf/</span> <span class="meaning">(daging sapi)</span></span>
+                <span class="word-item"><span class="number">535.</span> <span class="word">Thief</span> <span class="pronoun">/θiːf/</span> <span class="meaning">(pencuri)</span></span>
+                <span class="word-item"><span class="number">536.</span> <span class="word">Chief</span> <span class="pronoun">/tʃiːf/</span> <span class="meaning">(kepala suku)</span></span>
+                <span class="word-item"><span class="number">537.</span> <span class="word">Brief</span> <span class="pronoun">/briːf/</span> <span class="meaning">(singkat)</span></span>
+                <span class="word-item"><span class="number">538.</span> <span class="word">Field</span> <span class="pronoun">/fiːld/</span> <span class="meaning">(lapangan)</span></span>
+                <span class="word-item"><span class="number">539.</span> <span class="word">Shield</span> <span class="pronoun">/ʃiːld/</span> <span class="meaning">(perisai)</span></span>
+                <span class="word-item"><span class="number">540.</span> <span class="word">Yield</span> <span class="pronoun">/jiːld/</span> <span class="meaning">(menghasilkan)</span></span>
+                <span class="word-item"><span class="number">541.</span> <span class="word">Piece</span> <span class="pronoun">/piːs/</span> <span class="meaning">(bagian)</span></span>
+                <span class="word-item"><span class="number">542.</span> <span class="word">Believe</span> <span class="pronoun">/bɪˈliːv/</span> <span class="meaning">(percaya)</span></span>
+                <span class="word-item"><span class="number">543.</span> <span class="word">Achieve</span> <span class="pronoun">/əˈtʃiːv/</span> <span class="meaning">(mencapai)</span></span>
+                <span class="word-item"><span class="number">544.</span> <span class="word">Receive</span> <span class="pronoun">/rɪˈsiːv/</span> <span class="meaning">(menerima)</span></span>
+                <span class="word-item"><span class="number">545.</span> <span class="word">Marine</span> <span class="pronoun">/məˈriːn/</span> <span class="meaning">(laut)</span></span>
+                <span class="word-item"><span class="number">546.</span> <span class="word">Screen</span> <span class="pronoun">/skriːn/</span> <span class="meaning">(layar)</span></span>
+                <span class="word-item"><span class="number">547.</span> <span class="word">Green</span> <span class="pronoun">/ɡriːn/</span> <span class="meaning">(hijau)</span></span>
+                <span class="word-item"><span class="number">548.</span> <span class="word">Queen</span> <span class="pronoun">/kwiːn/</span> <span class="meaning">(ratu)</span></span>
+                <span class="word-item"><span class="number">549.</span> <span class="word">Seen</span> <span class="pronoun">/siːn/</span> <span class="meaning">(dilihat)</span></span>
+                <span class="word-item"><span class="number">550.</span> <span class="word">Teen</span> <span class="pronoun">/tiːn/</span> <span class="meaning">(remaja)</span></span>
+            </div>
+        </div>
+
+        <!-- Kelompok 3: Irama AI (Ai...) - 551-575 -->
+        <div class="rhyme-card">
+            <div class="rhyme-title">🎵 Kelompok 3</div>
+            <div class="rhyme-sound">/aɪ/ - AI (Ai...)</div>
+            <div class="word-list">
+                <span class="word-item"><span class="number">551.</span> <span class="word">Slide</span> <span class="pronoun">/slaɪd/</span> <span class="meaning">(meluncur)</span></span>
+                <span class="word-item"><span class="number">552.</span> <span class="word">Pride</span> <span class="pronoun">/praɪd/</span> <span class="meaning">(kebanggaan)</span></span>
+                <span class="word-item"><span class="number">553.</span> <span class="word">Bride</span> <span class="pronoun">/braɪd/</span> <span class="meaning">(pengantin wanita)</span></span>
+                <span class="word-item"><span class="number">554.</span> <span class="word">Guide</span> <span class="pronoun">/ɡaɪd/</span> <span class="meaning">(panduan)</span></span>
+                <span class="word-item"><span class="number">555.</span> <span class="word">Knight</span> <span class="pronoun">/naɪt/</span> <span class="meaning">(ksatria)</span></span>
+                <span class="word-item"><span class="number">556.</span> <span class="word">Bright</span> <span class="pronoun">/braɪt/</span> <span class="meaning">(cerah)</span></span>
+                <span class="word-item"><span class="number">557.</span> <span class="word">Light</span> <span class="pronoun">/laɪt/</span> <span class="meaning">(cahaya)</span></span>
+                <span class="word-item"><span class="number">558.</span> <span class="word">Night</span> <span class="pronoun">/naɪt/</span> <span class="meaning">(malam)</span></span>
+                <span class="word-item"><span class="number">559.</span> <span class="word">Fight</span> <span class="pronoun">/faɪt/</span> <span class="meaning">(berkelahi)</span></span>
+                <span class="word-item"><span class="number">560.</span> <span class="word">Might</span> <span class="pronoun">/maɪt/</span> <span class="meaning">(kekuatan)</span></span>
+                <span class="word-item"><span class="number">561.</span> <span class="word">Sight</span> <span class="pronoun">/saɪt/</span> <span class="meaning">(penglihatan)</span></span>
+                <span class="word-item"><span class="number">562.</span> <span class="word">Tight</span> <span class="pronoun">/taɪt/</span> <span class="meaning">(ketat)</span></span>
+                <span class="word-item"><span class="number">563.</span> <span class="word">Flight</span> <span class="pronoun">/flaɪt/</span> <span class="meaning">(penerbangan)</span></span>
+                <span class="word-item"><span class="number">564.</span> <span class="word">Prime</span> <span class="pronoun">/praɪm/</span> <span class="meaning">(utama)</span></span>
+                <span class="word-item"><span class="number">565.</span> <span class="word">Crime</span> <span class="pronoun">/kraɪm/</span> <span class="meaning">(kejahatan)</span></span>
+                <span class="word-item"><span class="number">566.</span> <span class="word">Chime</span> <span class="pronoun">/tʃaɪm/</span> <span class="meaning">(lonceng)</span></span>
+                <span class="word-item"><span class="number">567.</span> <span class="word">Rise</span> <span class="pronoun">/raɪz/</span> <span class="meaning">(naik)</span></span>
+                <span class="word-item"><span class="number">568.</span> <span class="word">Wise</span> <span class="pronoun">/waɪz/</span> <span class="meaning">(bijaksana)</span></span>
+                <span class="word-item"><span class="number">569.</span> <span class="word">Size</span> <span class="pronoun">/saɪz/</span> <span class="meaning">(ukuran)</span></span>
+                <span class="word-item"><span class="number">570.</span> <span class="word">Prize</span> <span class="pronoun">/praɪz/</span> <span class="meaning">(hadiah)</span></span>
+                <span class="word-item"><span class="number">571.</span> <span class="word">Style</span> <span class="pronoun">/staɪl/</span> <span class="meaning">(gaya)</span></span>
+                <span class="word-item"><span class="number">572.</span> <span class="word">Type</span> <span class="pronoun">/taɪp/</span> <span class="meaning">(tipe)</span></span>
+                <span class="word-item"><span class="number">573.</span> <span class="word">Cycle</span> <span class="pronoun">/ˈsaɪkl/</span> <span class="meaning">(siklus)</span></span>
+                <span class="word-item"><span class="number">574.</span> <span class="word">Reply</span> <span class="pronoun">/rɪˈplaɪ/</span> <span class="meaning">(membalas)</span></span>
+                <span class="word-item"><span class="number">575.</span> <span class="word">Deny</span> <span class="pronoun">/dɪˈnaɪ/</span> <span class="meaning">(menyangkal)</span></span>
+            </div>
+        </div>
+
+        <!-- Kelompok 4: Irama EI (Ei...) - 576-600 -->
+        <div class="rhyme-card">
+            <div class="rhyme-title">🎵 Kelompok 4</div>
+            <div class="rhyme-sound">/eɪ/ - EI (Ei...)</div>
+            <div class="word-list">
+                <span class="word-item"><span class="number">576.</span> <span class="word">Plate</span> <span class="pronoun">/pleɪt/</span> <span class="meaning">(piring)</span></span>
+                <span class="word-item"><span class="number">577.</span> <span class="word">Skate</span> <span class="pronoun">/skeɪt/</span> <span class="meaning">(sepatu roda)</span></span>
+                <span class="word-item"><span class="number">578.</span> <span class="word">State</span> <span class="pronoun">/steɪt/</span> <span class="meaning">(negara)</span></span>
+                <span class="word-item"><span class="number">579.</span> <span class="word">Brave</span> <span class="pronoun">/breɪv/</span> <span class="meaning">(berani)</span></span>
+                <span class="word-item"><span class="number">580.</span> <span class="word">Cave</span> <span class="pronoun">/keɪv/</span> <span class="meaning">(gua)</span></span>
+                <span class="word-item"><span class="number">581.</span> <span class="word">Save</span> <span class="pronoun">/seɪv/</span> <span class="meaning">(menyelamatkan)</span></span>
+                <span class="word-item"><span class="number">582.</span> <span class="word">Wave</span> <span class="pronoun">/weɪv/</span> <span class="meaning">(ombak)</span></span>
+                <span class="word-item"><span class="number">583.</span> <span class="word">Shape</span> <span class="pronoun">/ʃeɪp/</span> <span class="meaning">(bentuk)</span></span>
+                <span class="word-item"><span class="number">584.</span> <span class="word">Grape</span> <span class="pronoun">/ɡreɪp/</span> <span class="meaning">(anggur)</span></span>
+                <span class="word-item"><span class="number">585.</span> <span class="word">Trade</span> <span class="pronoun">/treɪd/</span> <span class="meaning">(perdagangan)</span></span>
+                <span class="word-item"><span class="number">586.</span> <span class="word">Grade</span> <span class="pronoun">/ɡreɪd/</span> <span class="meaning">(nilai)</span></span>
+                <span class="word-item"><span class="number">587.</span> <span class="word">Brain</span> <span class="pronoun">/breɪn/</span> <span class="meaning">(otak)</span></span>
+                <span class="word-item"><span class="number">588.</span> <span class="word">Chain</span> <span class="pronoun">/tʃeɪn/</span> <span class="meaning">(rantai)</span></span>
+                <span class="word-item"><span class="number">589.</span> <span class="word">Plain</span> <span class="pronoun">/pleɪn/</span> <span class="meaning">(polos)</span></span>
+                <span class="word-item"><span class="number">590.</span> <span class="word">Stain</span> <span class="pronoun">/steɪn/</span> <span class="meaning">(noda)</span></span>
+                <span class="word-item"><span class="number">591.</span> <span class="word">Paint</span> <span class="pronoun">/peɪnt/</span> <span class="meaning">(cat)</span></span>
+                <span class="word-item"><span class="number">592.</span> <span class="word">Saint</span> <span class="pronoun">/seɪnt/</span> <span class="meaning">(orang suci)</span></span>
+                <span class="word-item"><span class="number">593.</span> <span class="word">Wait</span> <span class="pronoun">/weɪt/</span> <span class="meaning">(tunggu)</span></span>
+                <span class="word-item"><span class="number">594.</span> <span class="word">Pray</span> <span class="pronoun">/preɪ/</span> <span class="meaning">(berdoa)</span></span>
+                <span class="word-item"><span class="number">595.</span> <span class="word">Gray</span> <span class="pronoun">/ɡreɪ/</span> <span class="meaning">(abu-abu)</span></span>
+                <span class="word-item"><span class="number">596.</span> <span class="word">Tray</span> <span class="pronoun">/treɪ/</span> <span class="meaning">(nampan)</span></span>
+                <span class="word-item"><span class="number">597.</span> <span class="word">Clay</span> <span class="pronoun">/kleɪ/</span> <span class="meaning">(tanah liat)</span></span>
+                <span class="word-item"><span class="number">598.</span> <span class="word">Sway</span> <span class="pronoun">/sweɪ/</span> <span class="meaning">(bergoyang)</span></span>
+                <span class="word-item"><span class="number">599.</span> <span class="word">Weigh</span> <span class="pronoun">/weɪ/</span> <span class="meaning">(menimbang)</span></span>
+                <span class="word-item"><span class="number">600.</span> <span class="word">Eight</span> <span class="pronoun">/eɪt/</span> <span class="meaning">(delapan)</span></span>
+            </div>
+        </div>
+
+        <!-- Kelompok 5: Irama OU (Ou...) - 601-625 -->
+        <div class="rhyme-card">
+            <div class="rhyme-title">🎵 Kelompok 5</div>
+            <div class="rhyme-sound">/oʊ/ - OU (Ou...)</div>
+            <div class="word-list">
+                <span class="word-item"><span class="number">601.</span> <span class="word">Bone</span> <span class="pronoun">/boʊn/</span> <span class="meaning">(tulang)</span></span>
+                <span class="word-item"><span class="number">602.</span> <span class="word">Zone</span> <span class="pronoun">/zoʊn/</span> <span class="meaning">(zona)</span></span>
+                <span class="word-item"><span class="number">603.</span> <span class="word">Cone</span> <span class="pronoun">/koʊn/</span> <span class="meaning">(kerucut)</span></span>
+                <span class="word-item"><span class="number">604.</span> <span class="word">Role</span> <span class="pronoun">/roʊl/</span> <span class="meaning">(peran)</span></span>
+                <span class="word-item"><span class="number">605.</span> <span class="word">Pole</span> <span class="pronoun">/poʊl/</span> <span class="meaning">(tiang)</span></span>
+                <span class="word-item"><span class="number">606.</span> <span class="word">Hole</span> <span class="pronoun">/hoʊl/</span> <span class="meaning">(lubang)</span></span>
+                <span class="word-item"><span class="number">607.</span> <span class="word">Sole</span> <span class="pronoun">/soʊl/</span> <span class="meaning">(satu-satunya)</span></span>
+                <span class="word-item"><span class="number">608.</span> <span class="word">Whole</span> <span class="pronoun">/hoʊl/</span> <span class="meaning">(seluruh)</span></span>
+                <span class="word-item"><span class="number">609.</span> <span class="word">Smoke</span> <span class="pronoun">/smoʊk/</span> <span class="meaning">(asap)</span></span>
+                <span class="word-item"><span class="number">610.</span> <span class="word">Joke</span> <span class="pronoun">/dʒoʊk/</span> <span class="meaning">(lelucon)</span></span>
+                <span class="word-item"><span class="number">611.</span> <span class="word">Woke</span> <span class="pronoun">/woʊk/</span> <span class="meaning">(bangun)</span></span>
+                <span class="word-item"><span class="number">612.</span> <span class="word">Broke</span> <span class="pronoun">/broʊk/</span> <span class="meaning">(bangkrut)</span></span>
+                <span class="word-item"><span class="number">613.</span> <span class="word">Coke</span> <span class="pronoun">/koʊk/</span> <span class="meaning">(kokas)</span></span>
+                <span class="word-item"><span class="number">614.</span> <span class="word">Ghost</span> <span class="pronoun">/ɡoʊst/</span> <span class="meaning">(hantu)</span></span>
+                <span class="word-item"><span class="number">615.</span> <span class="word">Most</span> <span class="pronoun">/moʊst/</span> <span class="meaning">(kebanyakan)</span></span>
+                <span class="word-item"><span class="number">616.</span> <span class="word">Post</span> <span class="pronoun">/poʊst/</span> <span class="meaning">(pos)</span></span>
+                <span class="word-item"><span class="number">617.</span> <span class="word">Roast</span> <span class="pronoun">/roʊst/</span> <span class="meaning">(panggang)</span></span>
+                <span class="word-item"><span class="number">618.</span> <span class="word">Coast</span> <span class="pronoun">/koʊst/</span> <span class="meaning">(pantai)</span></span>
+                <span class="word-item"><span class="number">619.</span> <span class="word">Toast</span> <span class="pronoun">/toʊst/</span> <span class="meaning">(roti panggang)</span></span>
+                <span class="word-item"><span class="number">620.</span> <span class="word">Boat</span> <span class="pronoun">/boʊt/</span> <span class="meaning">(perahu)</span></span>
+                <span class="word-item"><span class="number">621.</span> <span class="word">Coat</span> <span class="pronoun">/koʊt/</span> <span class="meaning">(mantel)</span></span>
+                <span class="word-item"><span class="number">622.</span> <span class="word">Float</span> <span class="pronoun">/floʊt/</span> <span class="meaning">(mengapung)</span></span>
+                <span class="word-item"><span class="number">623.</span> <span class="word">Throat</span> <span class="pronoun">/θroʊt/</span> <span class="meaning">(tenggorokan)</span></span>
+                <span class="word-item"><span class="number">624.</span> <span class="word">Bowl</span> <span class="pronoun">/boʊl/</span> <span class="meaning">(mangkuk)</span></span>
+                <span class="word-item"><span class="number">625.</span> <span class="word">Own</span> <span class="pronoun">/oʊn/</span> <span class="meaning">(memiliki)</span></span>
+            </div>
+        </div>
+
+        <!-- Kelompok 6: Irama OR (Ooo... Serak) - 626-650 -->
+        <div class="rhyme-card">
+            <div class="rhyme-title">🎵 Kelompok 6</div>
+            <div class="rhyme-sound">/ɔːr/ - OR (Ooo... Serak)</div>
+            <div class="word-list">
+                <span class="word-item"><span class="number">626.</span> <span class="word">Lord</span> <span class="pronoun">/lɔːrd/</span> <span class="meaning">(tuan)</span></span>
+                <span class="word-item"><span class="number">627.</span> <span class="word">Sword</span> <span class="pronoun">/sɔːrd/</span> <span class="meaning">(pedang)</span></span>
+                <span class="word-item"><span class="number">628.</span> <span class="word">Port</span> <span class="pronoun">/pɔːrt/</span> <span class="meaning">(pelabuhan)</span></span>
+                <span class="word-item"><span class="number">629.</span> <span class="word">Sort</span> <span class="pronoun">/sɔːrt/</span> <span class="meaning">(jenis)</span></span>
+                <span class="word-item"><span class="number">630.</span> <span class="word">North</span> <span class="pronoun">/nɔːrθ/</span> <span class="meaning">(utara)</span></span>
+                <span class="word-item"><span class="number">631.</span> <span class="word">Fourth</span> <span class="pronoun">/fɔːrθ/</span> <span class="meaning">(keempat)</span></span>
+                <span class="word-item"><span class="number">632.</span> <span class="word">Force</span> <span class="pronoun">/fɔːrs/</span> <span class="meaning">(kekuatan)</span></span>
+                <span class="word-item"><span class="number">633.</span> <span class="word">Horse</span> <span class="pronoun">/hɔːrs/</span> <span class="meaning">(kuda)</span></span>
+                <span class="word-item"><span class="number">634.</span> <span class="word">Shore</span> <span class="pronoun">/ʃɔːr/</span> <span class="meaning">(pantai)</span></span>
+                <span class="word-item"><span class="number">635.</span> <span class="word">Snore</span> <span class="pronoun">/snɔːr/</span> <span class="meaning">(mendengkur)</span></span>
+                <span class="word-item"><span class="number">636.</span> <span class="word">Swore</span> <span class="pronoun">/swɔːr/</span> <span class="meaning">(bersumpah)</span></span>
+                <span class="word-item"><span class="number">637.</span> <span class="word">Floor</span> <span class="pronoun">/flɔːr/</span> <span class="meaning">(lantai)</span></span>
+                <span class="word-item"><span class="number">638.</span> <span class="word">Poor</span> <span class="pronoun">/pɔːr/</span> <span class="meaning">(miskin)</span></span>
+                <span class="word-item"><span class="number">639.</span> <span class="word">Draw</span> <span class="pronoun">/drɔː/</span> <span class="meaning">(menggambar)</span></span>
+                <span class="word-item"><span class="number">640.</span> <span class="word">Law</span> <span class="pronoun">/lɔː/</span> <span class="meaning">(hukum)</span></span>
+                <span class="word-item"><span class="number">641.</span> <span class="word">Raw</span> <span class="pronoun">/rɔː/</span> <span class="meaning">(mentah)</span></span>
+                <span class="word-item"><span class="number">642.</span> <span class="word">Claw</span> <span class="pronoun">/klɔː/</span> <span class="meaning">(cakar)</span></span>
+                <span class="word-item"><span class="number">643.</span> <span class="word">Straw</span> <span class="pronoun">/strɔː/</span> <span class="meaning">(jerami)</span></span>
+                <span class="word-item"><span class="number">644.</span> <span class="word">Awful</span> <span class="pronoun">/ˈɔːfl/</span> <span class="meaning">(mengerikan)</span></span>
+                <span class="word-item"><span class="number">645.</span> <span class="word">Author</span> <span class="pronoun">/ˈɔːθər/</span> <span class="meaning">(penulis)</span></span>
+                <span class="word-item"><span class="number">646.</span> <span class="word">Always</span> <span class="pronoun">/ˈɔːlweɪz/</span> <span class="meaning">(selalu)</span></span>
+                <span class="word-item"><span class="number">647.</span> <span class="word">Already</span> <span class="pronoun">/ɔːlˈredi/</span> <span class="meaning">(sudah)</span></span>
+                <span class="word-item"><span class="number">648.</span> <span class="word">Also</span> <span class="pronoun">/ˈɔːlsoʊ/</span> <span class="meaning">(juga)</span></span>
+                <span class="word-item"><span class="number">649.</span> <span class="word">False</span> <span class="pronoun">/fɔːls/</span> <span class="meaning">(salah)</span></span>
+                <span class="word-item"><span class="number">650.</span> <span class="word">Salt</span> <span class="pronoun">/sɔːlt/</span> <span class="meaning">(garam)</span></span>
+            </div>
+        </div>
+
+        <!-- Kelompok 7: Irama ER (Eee... Pepet) - 651-675 -->
+        <div class="rhyme-card">
+            <div class="rhyme-title">🎵 Kelompok 7</div>
+            <div class="rhyme-sound">/ɜːr/ - ER (Eee... Pepet)</div>
+            <div class="word-list">
+                <span class="word-item"><span class="number">651.</span> <span class="word">Term</span> <span class="pronoun">/tɜːrm/</span> <span class="meaning">(istilah)</span></span>
+                <span class="word-item"><span class="number">652.</span> <span class="word">Germ</span> <span class="pronoun">/dʒɜːrm/</span> <span class="meaning">(kuman)</span></span>
+                <span class="word-item"><span class="number">653.</span> <span class="word">Stern</span> <span class="pronoun">/stɜːrn/</span> <span class="meaning">(tegas)</span></span>
+                <span class="word-item"><span class="number">654.</span> <span class="word">Clerk</span> <span class="pronoun">/klɜːrk/</span> <span class="meaning">(pegawai)</span></span>
+                <span class="word-item"><span class="number">655.</span> <span class="word">Serve</span> <span class="pronoun">/sɜːrv/</span> <span class="meaning">(melayani)</span></span>
+                <span class="word-item"><span class="number">656.</span> <span class="word">Nerve</span> <span class="pronoun">/nɜːrv/</span> <span class="meaning">(syaraf)</span></span>
+                <span class="word-item"><span class="number">657.</span> <span class="word">Curve</span> <span class="pronoun">/kɜːrv/</span> <span class="meaning">(lekuk)</span></span>
+                <span class="word-item"><span class="number">658.</span> <span class="word">Purse</span> <span class="pronoun">/pɜːrs/</span> <span class="meaning">(dompet)</span></span>
+                <span class="word-item"><span class="number">659.</span> <span class="word">Nurse</span> <span class="pronoun">/nɜːrs/</span> <span class="meaning">(perawat)</span></span>
+                <span class="word-item"><span class="number">660.</span> <span class="word">Curse</span> <span class="pronoun">/kɜːrs/</span> <span class="meaning">(kutukan)</span></span>
+                <span class="word-item"><span class="number">661.</span> <span class="word">Verse</span> <span class="pronoun">/vɜːrs/</span> <span class="meaning">(ayat)</span></span>
+                <span class="word-item"><span class="number">662.</span> <span class="word">Worse</span> <span class="pronoun">/wɜːrs/</span> <span class="meaning">(lebih buruk)</span></span>
+                <span class="word-item"><span class="number">663.</span> <span class="word">Worth</span> <span class="pronoun">/wɜːrθ/</span> <span class="meaning">(bernilai)</span></span>
+                <span class="word-item"><span class="number">664.</span> <span class="word">Birth</span> <span class="pronoun">/bɜːrθ/</span> <span class="meaning">(kelahiran)</span></span>
+                <span class="word-item"><span class="number">665.</span> <span class="word">Earth</span> <span class="pronoun">/ɜːrθ/</span> <span class="meaning">(bumi)</span></span>
+                <span class="word-item"><span class="number">666.</span> <span class="word">Early</span> <span class="pronoun">/ˈɜːrli/</span> <span class="meaning">(awal)</span></span>
+                <span class="word-item"><span class="number">667.</span> <span class="word">Learn</span> <span class="pronoun">/lɜːrn/</span> <span class="meaning">(belajar)</span></span>
+                <span class="word-item"><span class="number">668.</span> <span class="word">Heard</span> <span class="pronoun">/hɜːrd/</span> <span class="meaning">(mendengar)</span></span>
+                <span class="word-item"><span class="number">669.</span> <span class="word">Search</span> <span class="pronoun">/sɜːrtʃ/</span> <span class="meaning">(mencari)</span></span>
+                <span class="word-item"><span class="number">670.</span> <span class="word">Pearl</span> <span class="pronoun">/pɜːrl/</span> <span class="meaning">(mutiara)</span></span>
+                <span class="word-item"><span class="number">671.</span> <span class="word">World</span> <span class="pronoun">/wɜːrld/</span> <span class="meaning">(dunia)</span></span>
+                <span class="word-item"><span class="number">672.</span> <span class="word">Worm</span> <span class="pronoun">/wɜːrm/</span> <span class="meaning">(cacing)</span></span>
+                <span class="word-item"><span class="number">673.</span> <span class="word">Journey</span> <span class="pronoun">/ˈdʒɜːrni/</span> <span class="meaning">(perjalanan)</span></span>
+                <span class="word-item"><span class="number">674.</span> <span class="word">Turkey</span> <span class="pronoun">/ˈtɜːrki/</span> <span class="meaning">(kalkun)</span></span>
+                <span class="word-item"><span class="number">675.</span> <span class="word">Dirty</span> <span class="pronoun">/ˈdɜːrti/</span> <span class="meaning">(kotor)</span></span>
+            </div>
+        </div>
+
+        <!-- Kelompok 8: Irama AU (Au...) - 676-700 -->
+        <div class="rhyme-card">
+            <div class="rhyme-title">🎵 Kelompok 8</div>
+            <div class="rhyme-sound">/aʊ/ - AU (Au...)</div>
+            <div class="word-list">
+                <span class="word-item"><span class="number">676.</span> <span class="word">Noun</span> <span class="pronoun">/naʊn/</span> <span class="meaning">(kata benda)</span></span>
+                <span class="word-item"><span class="number">677.</span> <span class="word">Mount</span> <span class="pronoun">/maʊnt/</span> <span class="meaning">(gunung)</span></span>
+                <span class="word-item"><span class="number">678.</span> <span class="word">Count</span> <span class="pronoun">/kaʊnt/</span> <span class="meaning">(menghitung)</span></span>
+                <span class="word-item"><span class="number">679.</span> <span class="word">Amount</span> <span class="pronoun">/əˈmaʊnt/</span> <span class="meaning">(jumlah)</span></span>
+                <span class="word-item"><span class="number">680.</span> <span class="word">Account</span> <span class="pronoun">/əˈkaʊnt/</span> <span class="meaning">(akun)</span></span>
+                <span class="word-item"><span class="number">681.</span> <span class="word">Mountain</span> <span class="pronoun">/ˈmaʊntən/</span> <span class="meaning">(gunung)</span></span>
+                <span class="word-item"><span class="number">682.</span> <span class="word">Fountain</span> <span class="pronoun">/ˈfaʊntən/</span> <span class="meaning">(air mancur)</span></span>
+                <span class="word-item"><span class="number">683.</span> <span class="word">Thousand</span> <span class="pronoun">/ˈθaʊznd/</span> <span class="meaning">(seribu)</span></span>
+                <span class="word-item"><span class="number">684.</span> <span class="word">Mouth</span> <span class="pronoun">/maʊθ/</span> <span class="meaning">(mulut)</span></span>
+                <span class="word-item"><span class="number">685.</span> <span class="word">South</span> <span class="pronoun">/saʊθ/</span> <span class="meaning">(selatan)</span></span>
+                <span class="word-item"><span class="number">686.</span> <span class="word">Cloud</span> <span class="pronoun">/klaʊd/</span> <span class="meaning">(awan)</span></span>
+                <span class="word-item"><span class="number">687.</span> <span class="word">Loud</span> <span class="pronoun">/laʊd/</span> <span class="meaning">(keras)</span></span>
+                <span class="word-item"><span class="number">688.</span> <span class="word">Shout</span> <span class="pronoun">/ʃaʊt/</span> <span class="meaning">(berteriak)</span></span>
+                <span class="word-item"><span class="number">689.</span> <span class="word">Doubt</span> <span class="pronoun">/daʊt/</span> <span class="meaning">(keraguan)</span></span>
+                <span class="word-item"><span class="number">690.</span> <span class="word">Route</span> <span class="pronoun">/ruːt/</span> <span class="meaning">(rute)</span></span>
+                <span class="word-item"><span class="number">691.</span> <span class="word">Allow</span> <span class="pronoun">/əˈlaʊ/</span> <span class="meaning">(mengizinkan)</span></span>
+                <span class="word-item"><span class="number">692.</span> <span class="word">Bow</span> <span class="pronoun">/baʊ/</span> <span class="meaning">(membungkuk)</span></span>
+                <span class="word-item"><span class="number">693.</span> <span class="word">Vow</span> <span class="pronoun">/vaʊ/</span> <span class="meaning">(ikrar)</span></span>
+                <span class="word-item"><span class="number">694.</span> <span class="word">Tower</span> <span class="pronoun">/ˈtaʊər/</span> <span class="meaning">(menara)</span></span>
+                <span class="word-item"><span class="number">695.</span> <span class="word">Power</span> <span class="pronoun">/ˈpaʊər/</span> <span class="meaning">(kekuatan)</span></span>
+                <span class="word-item"><span class="number">696.</span> <span class="word">Shower</span> <span class="pronoun">/ˈʃaʊər/</span> <span class="meaning">(mandi)</span></span>
+                <span class="word-item"><span class="number">697.</span> <span class="word">Flower</span> <span class="pronoun">/ˈflaʊər/</span> <span class="meaning">(bunga)</span></span>
+                <span class="word-item"><span class="number">698.</span> <span class="word">Sour</span> <span class="pronoun">/ˈsaʊər/</span> <span class="meaning">(asam)</span></span>
+                <span class="word-item"><span class="number">699.</span> <span class="word">Hour</span> <span class="pronoun">/ˈaʊər/</span> <span class="meaning">(jam)</span></span>
+                <span class="word-item"><span class="number">700.</span> <span class="word">Our</span> <span class="pronoun">/ɑːr/</span> <span class="meaning">(kita)</span></span>
+            </div>
+        </div>
+
+        <!-- Kelompok 9: Irama Æ (Ee... Lebar) - 701-725 -->
+        <div class="rhyme-card">
+            <div class="rhyme-title">🎵 Kelompok 9</div>
+            <div class="rhyme-sound">/æ/ - Æ (Ee... Lebar)</div>
+            <div class="word-list">
+                <span class="word-item"><span class="number">701.</span> <span class="word">Bank</span> <span class="pronoun">/bæŋk/</span> <span class="meaning">(bank)</span></span>
+                <span class="word-item"><span class="number">702.</span> <span class="word">Tank</span> <span class="pronoun">/tæŋk/</span> <span class="meaning">(tangki)</span></span>
+                <span class="word-item"><span class="number">703.</span> <span class="word">Sank</span> <span class="pronoun">/sæŋk/</span> <span class="meaning">(tenggelam)</span></span>
+                <span class="word-item"><span class="number">704.</span> <span class="word">Blank</span> <span class="pronoun">/blæŋk/</span> <span class="meaning">(kosong)</span></span>
+                <span class="word-item"><span class="number">705.</span> <span class="word">Thank</span> <span class="pronoun">/θæŋk/</span> <span class="meaning">(terima kasih)</span></span>
+                <span class="word-item"><span class="number">706.</span> <span class="word">Rank</span> <span class="pronoun">/ræŋk/</span> <span class="meaning">(peringkat)</span></span>
+                <span class="word-item"><span class="number">707.</span> <span class="word">Stamp</span> <span class="pronoun">/stæmp/</span> <span class="meaning">(perangko)</span></span>
+                <span class="word-item"><span class="number">708.</span> <span class="word">Champ</span> <span class="pronoun">/tʃæmp/</span> <span class="meaning">(juara)</span></span>
+                <span class="word-item"><span class="number">709.</span> <span class="word">Camp</span> <span class="pronoun">/kæmp/</span> <span class="meaning">(kemah)</span></span>
+                <span class="word-item"><span class="number">710.</span> <span class="word">Lamp</span> <span class="pronoun">/læmp/</span> <span class="meaning">(lampu)</span></span>
+                <span class="word-item"><span class="number">711.</span> <span class="word">Damp</span> <span class="pronoun">/dæmp/</span> <span class="meaning">(lembab)</span></span>
+                <span class="word-item"><span class="number">712.</span> <span class="word">Flash</span> <span class="pronoun">/flæʃ/</span> <span class="meaning">(kilat)</span></span>
+                <span class="word-item"><span class="number">713.</span> <span class="word">Crash</span> <span class="pronoun">/kræʃ/</span> <span class="meaning">(tabrakan)</span></span>
+                <span class="word-item"><span class="number">714.</span> <span class="word">Smash</span> <span class="pronoun">/smæʃ/</span> <span class="meaning">(menghancurkan)</span></span>
+                <span class="word-item"><span class="number">715.</span> <span class="word">Trash</span> <span class="pronoun">/træʃ/</span> <span class="meaning">(sampah)</span></span>
+                <span class="word-item"><span class="number">716.</span> <span class="word">Match</span> <span class="pronoun">/mætʃ/</span> <span class="meaning">(pertandingan)</span></span>
+                <span class="word-item"><span class="number">717.</span> <span class="word">Patch</span> <span class="pronoun">/pætʃ/</span> <span class="meaning">(tambalan)</span></span>
+                <span class="word-item"><span class="number">718.</span> <span class="word">Catch</span> <span class="pronoun">/kætʃ/</span> <span class="meaning">(menangkap)</span></span>
+                <span class="word-item"><span class="number">719.</span> <span class="word">Hatch</span> <span class="pronoun">/hætʃ/</span> <span class="meaning">(menetas)</span></span>
+                <span class="word-item"><span class="number">720.</span> <span class="word">Snack</span> <span class="pronoun">/snæk/</span> <span class="meaning">(makanan ringan)</span></span>
+                <span class="word-item"><span class="number">721.</span> <span class="word">Track</span> <span class="pronoun">/træk/</span> <span class="meaning">(jalur)</span></span>
+                <span class="word-item"><span class="number">722.</span> <span class="word">Black</span> <span class="pronoun">/blæk/</span> <span class="meaning">(hitam)</span></span>
+                <span class="word-item"><span class="number">723.</span> <span class="word">Stack</span> <span class="pronoun">/stæk/</span> <span class="meaning">(tumpukan)</span></span>
+                <span class="word-item"><span class="number">724.</span> <span class="word">Pack</span> <span class="pronoun">/pæk/</span> <span class="meaning">(paket)</span></span>
+                <span class="word-item"><span class="number">725.</span> <span class="word">Snack</span> <span class="pronoun">/snæk/</span> <span class="meaning">(camilan)</span></span>
+            </div>
+        </div>
+
+        <!-- Kelompok 10: Irama A (A... Pendek) - 726-750 -->
+        <div class="rhyme-card">
+            <div class="rhyme-title">🎵 Kelompok 10</div>
+            <div class="rhyme-sound">/ʌ/ - A (Pendek/Kaget)</div>
+            <div class="word-list">
+                <span class="word-item"><span class="number">726.</span> <span class="word">Under</span> <span class="pronoun">/ˈʌndər/</span> <span class="meaning">(di bawah)</span></span>
+                <span class="word-item"><span class="number">727.</span> <span class="word">Until</span> <span class="pronoun">/ənˈtɪl/</span> <span class="meaning">(sampai)</span></span>
+                <span class="word-item"><span class="number">728.</span> <span class="word">Unless</span> <span class="pronoun">/ənˈles/</span> <span class="meaning">(kecuali)</span></span>
+                <span class="word-item"><span class="number">729.</span> <span class="word">Uncle</span> <span class="pronoun">/ˈʌŋkl/</span> <span class="meaning">(paman)</span></span>
+                <span class="word-item"><span class="number">730.</span> <span class="word">Ugly</span> <span class="pronoun">/ˈʌɡli/</span> <span class="meaning">(jelek)</span></span>
+                <span class="word-item"><span class="number">731.</span> <span class="word">Upper</span> <span class="pronoun">/ˈʌpər/</span> <span class="meaning">(atas)</span></span>
+                <span class="word-item"><span class="number">732.</span> <span class="word">Usher</span> <span class="pronoun">/ˈʌʃər/</span> <span class="meaning">(pramu tamu)</span></span>
+                <span class="word-item"><span class="number">733.</span> <span class="word">Blood</span> <span class="pronoun">/blʌd/</span> <span class="meaning">(darah)</span></span>
+                <span class="word-item"><span class="number">734.</span> <span class="word">Flood</span> <span class="pronoun">/flʌd/</span> <span class="meaning">(banjir)</span></span>
+                <span class="word-item"><span class="number">735.</span> <span class="word">Tough</span> <span class="pronoun">/tʌf/</span> <span class="meaning">(tangguh)</span></span>
+                <span class="word-item"><span class="number">736.</span> <span class="word">Rough</span> <span class="pronoun">/rʌf/</span> <span class="meaning">(kasar)</span></span>
+                <span class="word-item"><span class="number">737.</span> <span class="word">Enough</span> <span class="pronoun">/ɪˈnʌf/</span> <span class="meaning">(cukup)</span></span>
+                <span class="word-item"><span class="number">738.</span> <span class="word">Cousin</span> <span class="pronoun">/ˈkʌzn/</span> <span class="meaning">(sepupu)</span></span>
+                <span class="word-item"><span class="number">739.</span> <span class="word">Couple</span> <span class="pronoun">/ˈkʌpl/</span> <span class="meaning">(pasangan)</span></span>
+                <span class="word-item"><span class="number">740.</span> <span class="word">Double</span> <span class="pronoun">/ˈdʌbl/</span> <span class="meaning">(ganda)</span></span>
+                <span class="word-item"><span class="number">741.</span> <span class="word">Trouble</span> <span class="pronoun">/ˈtrʌbl/</span> <span class="meaning">(masalah)</span></span>
+                <span class="word-item"><span class="number">742.</span> <span class="word">Country</span> <span class="pronoun">/ˈkʌntri/</span> <span class="meaning">(negara)</span></span>
+                <span class="word-item"><span class="number">743.</span> <span class="word">Young</span> <span class="pronoun">/jʌŋ/</span> <span class="meaning">(muda)</span></span>
+                <span class="word-item"><span class="number">744.</span> <span class="word">Touch</span> <span class="pronoun">/tʌtʃ/</span> <span class="meaning">(sentuh)</span></span>
+                <span class="word-item"><span class="number">745.</span> <span class="word">Front</span> <span class="pronoun">/frʌnt/</span> <span class="meaning">(depan)</span></span>
+                <span class="word-item"><span class="number">746.</span> <span class="word">Month</span> <span class="pronoun">/mʌnθ/</span> <span class="meaning">(bulan)</span></span>
+                <span class="word-item"><span class="number">747.</span> <span class="word">Glove</span> <span class="pronoun">/ɡlʌv/</span> <span class="meaning">(sarung tangan)</span></span>
+                <span class="word-item"><span class="number">748.</span> <span class="word">Dove</span> <span class="pronoun">/dʌv/</span> <span class="meaning">(merpati)</span></span>
+                <span class="word-item"><span class="number">749.</span> <span class="word">Done</span> <span class="pronoun">/dʌn/</span> <span class="meaning">(selesai)</span></span>
+                <span class="word-item"><span class="number">750.</span> <span class="word">None</span> <span class="pronoun">/nʌn/</span> <span class="meaning">(tidak ada)</span></span>
+            </div>
+        </div>
+
+        <!-- Kelompok 11: Irama E (E... Ember) - 751-775 -->
+        <div class="rhyme-card">
+            <div class="rhyme-title">🎵 Kelompok 11</div>
+            <div class="rhyme-sound">/e/ - E (Ember)</div>
+            <div class="word-list">
+                <span class="word-item"><span class="number">751.</span> <span class="word">Neck</span> <span class="pronoun">/nek/</span> <span class="meaning">(leher)</span></span>
+                <span class="word-item"><span class="number">752.</span> <span class="word">Check</span> <span class="pronoun">/tʃek/</span> <span class="meaning">(memeriksa)</span></span>
+                <span class="word-item"><span class="number">753.</span> <span class="word">Deck</span> <span class="pronoun">/dek/</span> <span class="meaning">(dek)</span></span>
+                <span class="word-item"><span class="number">754.</span> <span class="word">Peck</span> <span class="pronoun">/pek/</span> <span class="meaning">(mematok)</span></span>
+                <span class="word-item"><span class="number">755.</span> <span class="word">Bell</span> <span class="pronoun">/bel/</span> <span class="meaning">(lonceng)</span></span>
+                <span class="word-item"><span class="number">756.</span> <span class="word">Cell</span> <span class="pronoun">/sel/</span> <span class="meaning">(sel)</span></span>
+                <span class="word-item"><span class="number">757.</span> <span class="word">Hell</span> <span class="pronoun">/hel/</span> <span class="meaning">(neraka)</span></span>
+                <span class="word-item"><span class="number">758.</span> <span class="word">Sell</span> <span class="pronoun">/sel/</span> <span class="meaning">(menjual)</span></span>
+                <span class="word-item"><span class="number">759.</span> <span class="word">Tell</span> <span class="pronoun">/tel/</span> <span class="meaning">(memberitahu)</span></span>
+                <span class="word-item"><span class="number">760.</span> <span class="word">Well</span> <span class="pronoun">/wel/</span> <span class="meaning">(baik)</span></span>
+                <span class="word-item"><span class="number">761.</span> <span class="word">Smell</span> <span class="pronoun">/smel/</span> <span class="meaning">(bau)</span></span>
+                <span class="word-item"><span class="number">762.</span> <span class="word">Spell</span> <span class="pronoun">/spel/</span> <span class="meaning">(mengeja)</span></span>
+                <span class="word-item"><span class="number">763.</span> <span class="word">Shell</span> <span class="pronoun">/ʃel/</span> <span class="meaning">(cangkang)</span></span>
+                <span class="word-item"><span class="number">764.</span> <span class="word">Shelf</span> <span class="pronoun">/ʃelf/</span> <span class="meaning">(rak)</span></span>
+                <span class="word-item"><span class="number">765.</span> <span class="word">Self</span> <span class="pronoun">/self/</span> <span class="meaning">(diri sendiri)</span></span>
+                <span class="word-item"><span class="number">766.</span> <span class="word">Left</span> <span class="pronoun">/left/</span> <span class="meaning">(kiri)</span></span>
+                <span class="word-item"><span class="number">767.</span> <span class="word">Felt</span> <span class="pronoun">/felt/</span> <span class="meaning">(merasa)</span></span>
+                <span class="word-item"><span class="number">768.</span> <span class="word">Melt</span> <span class="pronoun">/melt/</span> <span class="meaning">(meleleh)</span></span>
+                <span class="word-item"><span class="number">769.</span> <span class="word">Belt</span> <span class="pronoun">/belt/</span> <span class="meaning">(ikat pinggang)</span></span>
+                <span class="word-item"><span class="number">770.</span> <span class="word">Kept</span> <span class="pronoun">/kept/</span> <span class="meaning">(menjaga)</span></span>
+                <span class="word-item"><span class="number">771.</span> <span class="word">Slept</span> <span class="pronoun">/slept/</span> <span class="meaning">(tidur)</span></span>
+                <span class="word-item"><span class="number">772.</span> <span class="word">Step</span> <span class="pronoun">/step/</span> <span class="meaning">(langkah)</span></span>
+                <span class="word-item"><span class="number">773.</span> <span class="word">Dress</span> <span class="pronoun">/dres/</span> <span class="meaning">(gaun)</span></span>
+                <span class="word-item"><span class="number">774.</span> <span class="word">Press</span> <span class="pronoun">/pres/</span> <span class="meaning">(tekan)</span></span>
+                <span class="word-item"><span class="number">775.</span> <span class="word">Guess</span> <span class="pronoun">/ɡes/</span> <span class="meaning">(tebak)</span></span>
+            </div>
+        </div>
+
+        <!-- Kelompok 12: Irama I (I... Tajam/Cepat) - 776-800 -->
+        <div class="rhyme-card">
+            <div class="rhyme-title">🎵 Kelompok 12</div>
+            <div class="rhyme-sound">/ɪ/ - I (Tajam/Cepat)</div>
+            <div class="word-list">
+                <span class="word-item"><span class="number">776.</span> <span class="word">Pick</span> <span class="pronoun">/pɪk/</span> <span class="meaning">(memilih)</span></span>
+                <span class="word-item"><span class="number">777.</span> <span class="word">Sick</span> <span class="pronoun">/sɪk/</span> <span class="meaning">(sakit)</span></span>
+                <span class="word-item"><span class="number">778.</span> <span class="word">Tick</span> <span class="pronoun">/tɪk/</span> <span class="meaning">(centang)</span></span>
+                <span class="word-item"><span class="number">779.</span> <span class="word">Quick</span> <span class="pronoun">/kwɪk/</span> <span class="meaning">(cepat)</span></span>
+                <span class="word-item"><span class="number">780.</span> <span class="word">Brick</span> <span class="pronoun">/brɪk/</span> <span class="meaning">(bata)</span></span>
+                <span class="word-item"><span class="number">781.</span> <span class="word">Stick</span> <span class="pronoun">/stɪk/</span> <span class="meaning">(tongkat)</span></span>
+                <span class="word-item"><span class="number">782.</span> <span class="word">Kick</span> <span class="pronoun">/kɪk/</span> <span class="meaning">(menendang)</span></span>
+                <span class="word-item"><span class="number">783.</span> <span class="word">Lick</span> <span class="pronoun">/lɪk/</span> <span class="meaning">(menjilat)</span></span>
+                <span class="word-item"><span class="number">784.</span> <span class="word">Trick</span> <span class="pronoun">/trɪk/</span> <span class="meaning">(tipuan)</span></span>
+                <span class="word-item"><span class="number">785.</span> <span class="word">Print</span> <span class="pronoun">/prɪnt/</span> <span class="meaning">(cetak)</span></span>
+                <span class="word-item"><span class="number">786.</span> <span class="word">Hint</span> <span class="pronoun">/hɪnt/</span> <span class="meaning">(petunjuk)</span></span>
+                <span class="word-item"><span class="number">787.</span> <span class="word">Mint</span> <span class="pronoun">/mɪnt/</span> <span class="meaning">(permen)</span></span>
+                <span class="word-item"><span class="number">788.</span> <span class="word">Skill</span> <span class="pronoun">/skɪl/</span> <span class="meaning">(keterampilan)</span></span>
+                <span class="word-item"><span class="number">789.</span> <span class="word">Still</span> <span class="pronoun">/stɪl/</span> <span class="meaning">(masih)</span></span>
+                <span class="word-item"><span class="number">790.</span> <span class="word">Will</span> <span class="pronoun">/wɪl/</span> <span class="meaning">(akan)</span></span>
+                <span class="word-item"><span class="number">791.</span> <span class="word">Bill</span> <span class="pronoun">/bɪl/</span> <span class="meaning">(tagihan)</span></span>
+                <span class="word-item"><span class="number">792.</span> <span class="word">Fill</span> <span class="pronoun">/fɪl/</span> <span class="meaning">(mengisi)</span></span>
+                <span class="word-item"><span class="number">793.</span> <span class="word">Hill</span> <span class="pronoun">/hɪl/</span> <span class="meaning">(bukit)</span></span>
+                <span class="word-item"><span class="number">794.</span> <span class="word">Kill</span> <span class="pronoun">/kɪl/</span> <span class="meaning">(membunuh)</span></span>
+                <span class="word-item"><span class="number">795.</span> <span class="word">Pill</span> <span class="pronoun">/pɪl/</span> <span class="meaning">(pil)</span></span>
+                <span class="word-item"><span class="number">796.</span> <span class="word">Bridge</span> <span class="pronoun">/brɪdʒ/</span> <span class="meaning">(jembatan)</span></span>
+                <span class="word-item"><span class="number">797.</span> <span class="word">Fridge</span> <span class="pronoun">/frɪdʒ/</span> <span class="meaning">(kulkas)</span></span>
+                <span class="word-item"><span class="number">798.</span> <span class="word">Switch</span> <span class="pronoun">/swɪtʃ/</span> <span class="meaning">(saklar)</span></span>
+                <span class="word-item"><span class="number">799.</span> <span class="word">Which</span> <span class="pronoun">/wɪtʃ/</span> <span class="meaning">(yang mana)</span></span>
+                <span class="word-item"><span class="number">800.</span> <span class="word">Rich</span> <span class="pronoun">/rɪtʃ/</span> <span class="meaning">(kaya)</span></span>
+            </div>
+        </div>
+
+        <!-- Kelompok 13: Irama OI (Oi...) - 801-825 -->
+        <div class="rhyme-card">
+            <div class="rhyme-title">🎵 Kelompok 13</div>
+            <div class="rhyme-sound">/ɔɪ/ - OI (Oi...)</div>
+            <div class="word-list">
+                <span class="word-item"><span class="number">801.</span> <span class="word">Point</span> <span class="pronoun">/pɔɪnt/</span> <span class="meaning">(titik)</span></span>
+                <span class="word-item"><span class="number">802.</span> <span class="word">Joint</span> <span class="pronoun">/dʒɔɪnt/</span> <span class="meaning">(sendi)</span></span>
+                <span class="word-item"><span class="number">803.</span> <span class="word">Spoil</span> <span class="pronoun">/spɔɪl/</span> <span class="meaning">(merusak)</span></span>
+                <span class="word-item"><span class="number">804.</span> <span class="word">Broil</span> <span class="pronoun">/brɔɪl/</span> <span class="meaning">(memanggang)</span></span>
+                <span class="word-item"><span class="number">805.</span> <span class="word">Foil</span> <span class="pronoun">/fɔɪl/</span> <span class="meaning">(aluminium foil)</span></span>
+                <span class="word-item"><span class="number">806.</span> <span class="word">Coil</span> <span class="pronoun">/kɔɪl/</span> <span class="meaning">(gulungan)</span></span>
+                <span class="word-item"><span class="number">807.</span> <span class="word">Soil</span> <span class="pronoun">/sɔɪl/</span> <span class="meaning">(tanah)</span></span>
+                <span class="word-item"><span class="number">808.</span> <span class="word">Moist</span> <span class="pronoun">/mɔɪst/</span> <span class="meaning">(lembab)</span></span>
+                <span class="word-item"><span class="number">809.</span> <span class="word">Hoist</span> <span class="pronoun">/hɔɪst/</span> <span class="meaning">(mengangkat)</span></span>
+                <span class="word-item"><span class="number">810.</span> <span class="word">Choice</span> <span class="pronoun">/tʃɔɪs/</span> <span class="meaning">(pilihan)</span></span>
+                <span class="word-item"><span class="number">811.</span> <span class="word">Voice</span> <span class="pronoun">/vɔɪs/</span> <span class="meaning">(suara)</span></span>
+                <span class="word-item"><span class="number">812.</span> <span class="word">Rejoice</span> <span class="pronoun">/rɪˈdʒɔɪs/</span> <span class="meaning">(bersukacita)</span></span>
+                <span class="word-item"><span class="number">813.</span> <span class="word">Poison</span> <span class="pronoun">/ˈpɔɪzn/</span> <span class="meaning">(racun)</span></span>
+                <span class="word-item"><span class="number">814.</span> <span class="word">Pointy</span> <span class="pronoun">/ˈpɔɪnti/</span> <span class="meaning">(runcing)</span></span>
+                <span class="word-item"><span class="number">815.</span> <span class="word">Toilet</span> <span class="pronoun">/ˈtɔɪlət/</span> <span class="meaning">(toilet)</span></span>
+                <span class="word-item"><span class="number">816.</span> <span class="word">Boyhood</span> <span class="pronoun">/ˈbɔɪhʊd/</span> <span class="meaning">(masa kanak)</span></span>
+                <span class="word-item"><span class="number">817.</span> <span class="word">Cowboy</span> <span class="pronoun">/ˈkaʊbɔɪ/</span> <span class="meaning">(koboi)</span></span>
+                <span class="word-item"><span class="number">818.</span> <span class="word">Convoy</span> <span class="pronoun">/ˈkɒnvɔɪ/</span> <span class="meaning">(konvoi)</span></span>
+                <span class="word-item"><span class="number">819.</span> <span class="word">Alloy</span> <span class="pronoun">/ˈælɔɪ/</span> <span class="meaning">(campuran logam)</span></span>
+                <span class="word-item"><span class="number">820.</span> <span class="word">Deploy</span> <span class="pronoun">/dɪˈplɔɪ/</span> <span class="meaning">(menempatkan)</span></span>
+                <span class="word-item"><span class="number">821.</span> <span class="word">Employ</span> <span class="pronoun">/ɪmˈplɔɪ/</span> <span class="meaning">(mempekerjakan)</span></span>
+                <span class="word-item"><span class="number">822.</span> <span class="word">Annoy</span> <span class="pronoun">/əˈnɔɪ/</span> <span class="meaning">(mengganggu)</span></span>
+                <span class="word-item"><span class="number">823.</span> <span class="word">Oyster</span> <span class="pronoun">/ˈɔɪstər/</span> <span class="meaning">(tiram)</span></span>
+                <span class="word-item"><span class="number">824.</span> <span class="word">Loyal</span> <span class="pronoun">/ˈlɔɪəl/</span> <span class="meaning">(setia)</span></span>
+                <span class="word-item"><span class="number">825.</span> <span class="word">Royal</span> <span class="pronoun">/ˈrɔɪəl/</span> <span class="meaning">(kerajaan)</span></span>
+            </div>
+        </div>
+
+        <!-- Kelompok 14: Irama AR (Aaa... Lebar) - 826-850 -->
+        <div class="rhyme-card">
+            <div class="rhyme-title">🎵 Kelompok 14</div>
+            <div class="rhyme-sound">/ɑːr/ - AR (Aaa... Lebar)</div>
+            <div class="word-list">
+                <span class="word-item"><span class="number">826.</span> <span class="word">Charm</span> <span class="pronoun">/tʃɑːrm/</span> <span class="meaning">(pesona)</span></span>
+                <span class="word-item"><span class="number">827.</span> <span class="word">Farm</span> <span class="pronoun">/fɑːrm/</span> <span class="meaning">(pertanian)</span></span>
+                <span class="word-item"><span class="number">828.</span> <span class="word">Harm</span> <span class="pronoun">/hɑːrm/</span> <span class="meaning">(bahaya)</span></span>
+                <span class="word-item"><span class="number">829.</span> <span class="word">Alarm</span> <span class="pronoun">/əˈlɑːrm/</span> <span class="meaning">(alarm)</span></span>
+                <span class="word-item"><span class="number">830.</span> <span class="word">Sharp</span> <span class="pronoun">/ʃɑːrp/</span> <span class="meaning">(tajam)</span></span>
+                <span class="word-item"><span class="number">831.</span> <span class="word">Harp</span> <span class="pronoun">/hɑːrp/</span> <span class="meaning">(kecapi)</span></span>
+                <span class="word-item"><span class="number">832.</span> <span class="word">Yard</span> <span class="pronoun">/jɑːrd/</span> <span class="meaning">(halaman)</span></span>
+                <span class="word-item"><span class="number">833.</span> <span class="word">Guard</span> <span class="pronoun">/ɡɑːrd/</span> <span class="meaning">(penjaga)</span></span>
+                <span class="word-item"><span class="number">834.</span> <span class="word">Card</span> <span class="pronoun">/kɑːrd/</span> <span class="meaning">(kartu)</span></span>
+                <span class="word-item"><span class="number">835.</span> <span class="word">Hard</span> <span class="pronoun">/hɑːrd/</span> <span class="meaning">(keras)</span></span>
+                <span class="word-item"><span class="number">836.</span> <span class="word">Start</span> <span class="pronoun">/stɑːrt/</span> <span class="meaning">(mulai)</span></span>
+                <span class="word-item"><span class="number">837.</span> <span class="word">Part</span> <span class="pronoun">/pɑːrt/</span> <span class="meaning">(bagian)</span></span>
+                <span class="word-item"><span class="number">838.</span> <span class="word">Smart</span> <span class="pronoun">/smɑːrt/</span> <span class="meaning">(pintar)</span></span>
+                <span class="word-item"><span class="number">839.</span> <span class="word">Heart</span> <span class="pronoun">/hɑːrt/</span> <span class="meaning">(hati)</span></span>
+                <span class="word-item"><span class="number">840.</span> <span class="word">Arch</span> <span class="pronoun">/ɑːrtʃ/</span> <span class="meaning">(lengkungan)</span></span>
+                <span class="word-item"><span class="number">841.</span> <span class="word">March</span> <span class="pronoun">/mɑːrtʃ/</span> <span class="meaning">(berbaris)</span></span>
+                <span class="word-item"><span class="number">842.</span> <span class="word">Large</span> <span class="pronoun">/lɑːrdʒ/</span> <span class="meaning">(besar)</span></span>
+                <span class="word-item"><span class="number">843.</span> <span class="word">Charge</span> <span class="pronoun">/tʃɑːrdʒ/</span> <span class="meaning">(mengisi daya)</span></span>
+                <span class="word-item"><span class="number">844.</span> <span class="word">Target</span> <span class="pronoun">/ˈtɑːrɡɪt/</span> <span class="meaning">(target)</span></span>
+                <span class="word-item"><span class="number">845.</span> <span class="word">Market</span> <span class="pronoun">/ˈmɑːrkɪt/</span> <span class="meaning">(pasar)</span></span>
+                <span class="word-item"><span class="number">846.</span> <span class="word">Carpet</span> <span class="pronoun">/ˈkɑːrpɪt/</span> <span class="meaning">(karpet)</span></span>
+                <span class="word-item"><span class="number">847.</span> <span class="word">Garden</span> <span class="pronoun">/ˈɡɑːrdn/</span> <span class="meaning">(kebun)</span></span>
+                <span class="word-item"><span class="number">848.</span> <span class="word">Partner</span> <span class="pronoun">/ˈpɑːrtnər/</span> <span class="meaning">(pasangan)</span></span>
+                <span class="word-item"><span class="number">849.</span> <span class="word">Harvest</span> <span class="pronoun">/ˈhɑːrvɪst/</span> <span class="meaning">(panen)</span></span>
+                <span class="word-item"><span class="number">850.</span> <span class="word">Smart</span> <span class="pronoun">/smɑːrt/</span> <span class="meaning">(pintar)</span></span>
+            </div>
+        </div>
+
+        <!-- Kelompok 15: Irama SY/C (Desis & Letup) - 851-875 -->
+        <div class="rhyme-card">
+            <div class="rhyme-title">🎵 Kelompok 15</div>
+            <div class="rhyme-sound">/ʃ/ /tʃ/ - Desis & Letup</div>
+            <div class="word-list">
+                <span class="word-item"><span class="number">851.</span> <span class="word">Flash</span> <span class="pronoun">/flæʃ/</span> <span class="meaning">(kilat)</span></span>
+                <span class="word-item"><span class="number">852.</span> <span class="word">Fresh</span> <span class="pronoun">/freʃ/</span> <span class="meaning">(segar)</span></span>
+                <span class="word-item"><span class="number">853.</span> <span class="word">Brush</span> <span class="pronoun">/brʌʃ/</span> <span class="meaning">(sikat)</span></span>
+                <span class="word-item"><span class="number">854.</span> <span class="word">Crush</span> <span class="pronoun">/krʌʃ/</span> <span class="meaning">(menghancurkan)</span></span>
+                <span class="word-item"><span class="number">855.</span> <span class="word">Rush</span> <span class="pronoun">/rʌʃ/</span> <span class="meaning">(tergesa)</span></span>
+                <span class="word-item"><span class="number">856.</span> <span class="word">Flush</span> <span class="pronoun">/flʌʃ/</span> <span class="meaning">(menyiram)</span></span>
+                <span class="word-item"><span class="number">857.</span> <span class="word">Trash</span> <span class="pronoun">/træʃ/</span> <span class="meaning">(sampah)</span></span>
+                <span class="word-item"><span class="number">858.</span> <span class="word">Smash</span> <span class="pronoun">/smæʃ/</span> <span class="meaning">(menghancurkan)</span></span>
+                <span class="word-item"><span class="number">859.</span> <span class="word">Crash</span> <span class="pronoun">/kræʃ/</span> <span class="meaning">(tabrakan)</span></span>
+                <span class="word-item"><span class="number">860.</span> <span class="word">Splash</span> <span class="pronoun">/splæʃ/</span> <span class="meaning">(percikan)</span></span>
+                <span class="word-item"><span class="number">861.</span> <span class="word">Ocean</span> <span class="pronoun">/ˈəʊʃn/</span> <span class="meaning">(samudra)</span></span>
+                <span class="word-item"><span class="number">862.</span> <span class="word">Social</span> <span class="pronoun">/ˈsəʊʃl/</span> <span class="meaning">(sosial)</span></span>
+                <span class="word-item"><span class="number">863.</span> <span class="word">Special</span> <span class="pronoun">/ˈspeʃl/</span> <span class="meaning">(spesial)</span></span>
+                <span class="word-item"><span class="number">864.</span> <span class="word">Crucial</span> <span class="pronoun">/ˈkruːʃl/</span> <span class="meaning">(penting)</span></span>
+                <span class="word-item"><span class="number">865.</span> <span class="word">Patient</span> <span class="pronoun">/ˈpeɪʃnt/</span> <span class="meaning">(pasien)</span></span>
+                <span class="word-item"><span class="number">866.</span> <span class="word">Ancient</span> <span class="pronoun">/ˈeɪnʃənt/</span> <span class="meaning">(kuno)</span></span>
+                <span class="word-item"><span class="number">867.</span> <span class="word">Future</span> <span class="pronoun">/ˈfjuːtʃər/</span> <span class="meaning">(masa depan)</span></span>
+                <span class="word-item"><span class="number">868.</span> <span class="word">Nature</span> <span class="pronoun">/ˈneɪtʃər/</span> <span class="meaning">(alam)</span></span>
+                <span class="word-item"><span class="number">869.</span> <span class="word">Picture</span> <span class="pronoun">/ˈpɪktʃər/</span> <span class="meaning">(gambar)</span></span>
+                <span class="word-item"><span class="number">870.</span> <span class="word">Feature</span> <span class="pronoun">/ˈfiːtʃər/</span> <span class="meaning">(fitur)</span></span>
+                <span class="word-item"><span class="number">871.</span> <span class="word">Culture</span> <span class="pronoun">/ˈkʌltʃər/</span> <span class="meaning">(budaya)</span></span>
+                <span class="word-item"><span class="number">872.</span> <span class="word">Lecture</span> <span class="pronoun">/ˈlektʃər/</span> <span class="meaning">(kuliah)</span></span>
+                <span class="word-item"><span class="number">873.</span> <span class="word">Capture</span> <span class="pronoun">/ˈkæptʃər/</span> <span class="meaning">(menangkap)</span></span>
+                <span class="word-item"><span class="number">874.</span> <span class="word">Venture</span> <span class="pronoun">/ˈventʃər/</span> <span class="meaning">(usaha)</span></span>
+                <span class="word-item"><span class="number">875.</span> <span class="word">Creature</span> <span class="pronoun">/ˈkriːtʃər/</span> <span class="meaning">(makhluk)</span></span>
+            </div>
+        </div>
+
+        <!-- Kelompok 16: Irama AIR (E-er...) - 876-900 -->
+        <div class="rhyme-card">
+            <div class="rhyme-title">🎵 Kelompok 16</div>
+            <div class="rhyme-sound">/eə(r)/ - AIR (E-er...)</div>
+            <div class="word-list">
+                <span class="word-item"><span class="number">876.</span> <span class="word">Care</span> <span class="pronoun">/keə(r)/</span> <span class="meaning">(peduli)</span></span>
+                <span class="word-item"><span class="number">877.</span> <span class="word">Dare</span> <span class="pronoun">/deə(r)/</span> <span class="meaning">(berani)</span></span>
+                <span class="word-item"><span class="number">878.</span> <span class="word">Fare</span> <span class="pronoun">/feə(r)/</span> <span class="meaning">(tarif)</span></span>
+                <span class="word-item"><span class="number">879.</span> <span class="word">Mare</span> <span class="pronoun">/meə(r)/</span> <span class="meaning">(kuda betina)</span></span>
+                <span class="word-item"><span class="number">880.</span> <span class="word">Rare</span> <span class="pronoun">/reə(r)/</span> <span class="meaning">(jarang)</span></span>
+                <span class="word-item"><span class="number">881.</span> <span class="word">Bare</span> <span class="pronoun">/beə(r)/</span> <span class="meaning">(telanjang)</span></span>
+                <span class="word-item"><span class="number">882.</span> <span class="word">Flare</span> <span class="pronoun">/fleə(r)/</span> <span class="meaning">(suar)</span></span>
+                <span class="word-item"><span class="number">883.</span> <span class="word">Scare</span> <span class="pronoun">/skeə(r)/</span> <span class="meaning">(menakut-nakuti)</span></span>
+                <span class="word-item"><span class="number">884.</span> <span class="word">Spare</span> <span class="pronoun">/speə(r)/</span> <span class="meaning">(cadangan)</span></span>
+                <span class="word-item"><span class="number">885.</span> <span class="word">Stare</span> <span class="pronoun">/steə(r)/</span> <span class="meaning">(menatap)</span></span>
+                <span class="word-item"><span class="number">886.</span> <span class="word">Aware</span> <span class="pronoun">/əˈweə(r)/</span> <span class="meaning">(sadar)</span></span>
+                <span class="word-item"><span class="number">887.</span> <span class="word">Compare</span> <span class="pronoun">/kəmˈpeə(r)/</span> <span class="meaning">(membandingkan)</span></span>
+                <span class="word-item"><span class="number">888.</span> <span class="word">Prepare</span> <span class="pronoun">/prɪˈpeə(r)/</span> <span class="meaning">(menyiapkan)</span></span>
+                <span class="word-item"><span class="number">889.</span> <span class="word">Repair</span> <span class="pronoun">/rɪˈpeə(r)/</span> <span class="meaning">(memperbaiki)</span></span>
+                <span class="word-item"><span class="number">890.</span> <span class="word">Airport</span> <span class="pronoun">/ˈeəpɔːrt/</span> <span class="meaning">(bandara)</span></span>
+                <span class="word-item"><span class="number">891.</span> <span class="word">Airplane</span> <span class="pronoun">/ˈeəpleɪn/</span> <span class="meaning">(pesawat)</span></span>
+                <span class="word-item"><span class="number">892.</span> <span class="word">Fairy</span> <span class="pronoun">/ˈfeəri/</span> <span class="meaning">(peri)</span></span>
+                <span class="word-item"><span class="number">893.</span> <span class="word">Dairy</span> <span class="pronoun">/ˈdeəri/</span> <span class="meaning">(susu)</span></span>
+                <span class="word-item"><span class="number">894.</span> <span class="word">Fairly</span> <span class="pronoun">/ˈfeəli/</span> <span class="meaning">(secara adil)</span></span>
+                <span class="word-item"><span class="number">895.</span> <span class="word">Barely</span> <span class="pronoun">/ˈbeəli/</span> <span class="meaning">(hampir tidak)</span></span>
+                <span class="word-item"><span class="number">896.</span> <span class="word">Scarcely</span> <span class="pronoun">/ˈskeəsli/</span> <span class="meaning">(hampir tidak)</span></span>
+                <span class="word-item"><span class="number">897.</span> <span class="word">Parent</span> <span class="pronoun">/ˈpeərənt/</span> <span class="meaning">(orang tua)</span></span>
+                <span class="word-item"><span class="number">898.</span> <span class="word">Prayer</span> <span class="pronoun">/preər/</span> <span class="meaning">(doa)</span></span>
+                <span class="word-item"><span class="number">899.</span> <span class="word">Mayor</span> <span class="pronoun">/meər/</span> <span class="meaning">(walikota)</span></span>
+                <span class="word-item"><span class="number">900.</span> <span class="word">Air</span> <span class="pronoun">/eə(r)/</span> <span class="meaning">(udara)</span></span>
+            </div>
+        </div>
+
+        <!-- Kelompok 17: Irama EAR (I-er...) - 901-925 -->
+        <div class="rhyme-card">
+            <div class="rhyme-title">🎵 Kelompok 17</div>
+            <div class="rhyme-sound">/ɪə(r)/ - EAR (I-er...)</div>
+            <div class="word-list">
+                <span class="word-item"><span class="number">901.</span> <span class="word">Ear</span> <span class="pronoun">/ɪə(r)/</span> <span class="meaning">(telinga)</span></span>
+                <span class="word-item"><span class="number">902.</span> <span class="word">Gear</span> <span class="pronoun">/ɡɪə(r)/</span> <span class="meaning">(perlengkapan)</span></span>
+                <span class="word-item"><span class="number">903.</span> <span class="word">Hear</span> <span class="pronoun">/hɪə(r)/</span> <span class="meaning">(mendengar)</span></span>
+                <span class="word-item"><span class="number">904.</span> <span class="word">Near</span> <span class="pronoun">/nɪə(r)/</span> <span class="meaning">(dekat)</span></span>
+                <span class="word-item"><span class="number">905.</span> <span class="word">Rear</span> <span class="pronoun">/rɪə(r)/</span> <span class="meaning">(belakang)</span></span>
+                <span class="word-item"><span class="number">906.</span> <span class="word">Tear</span> <span class="pronoun">/tɪə(r)/</span> <span class="meaning">(air mata)</span></span>
+                <span class="word-item"><span class="number">907.</span> <span class="word">Year</span> <span class="pronoun">/jɪə(r)/</span> <span class="meaning">(tahun)</span></span>
+                <span class="word-item"><span class="number">908.</span> <span class="word">Clear</span> <span class="pronoun">/klɪə(r)/</span> <span class="meaning">(jelas)</span></span>
+                <span class="word-item"><span class="number">909.</span> <span class="word">Dear</span> <span class="pronoun">/dɪə(r)/</span> <span class="meaning">(sayang)</span></span>
+                <span class="word-item"><span class="number">910.</span> <span class="word">Fear</span> <span class="pronoun">/fɪə(r)/</span> <span class="meaning">(takut)</span></span>
+                <span class="word-item"><span class="number">911.</span> <span class="word">Spear</span> <span class="pronoun">/spɪə(r)/</span> <span class="meaning">(tombak)</span></span>
+                <span class="word-item"><span class="number">912.</span> <span class="word">Shear</span> <span class="pronoun">/ʃɪə(r)/</span> <span class="meaning">(mencukur)</span></span>
+                <span class="word-item"><span class="number">913.</span> <span class="word">Appear</span> <span class="pronoun">/əˈpɪə(r)/</span> <span class="meaning">(muncul)</span></span>
+                <span class="word-item"><span class="number">914.</span> <span class="word">Career</span> <span class="pronoun">/kəˈrɪə(r)/</span> <span class="meaning">(karir)</span></span>
+                <span class="word-item"><span class="number">915.</span> <span class="word">Pioneer</span> <span class="pronoun">/ˌpaɪəˈnɪə(r)/</span> <span class="meaning">(perintis)</span></span>
+                <span class="word-item"><span class="number">916.</span> <span class="word">Volunteer</span> <span class="pronoun">/ˌvɒlənˈtɪə(r)/</span> <span class="meaning">(sukarelawan)</span></span>
+                <span class="word-item"><span class="number">917.</span> <span class="word">Cheer</span> <span class="pronoun">/tʃɪə(r)/</span> <span class="meaning">(sorak)</span></span>
+                <span class="word-item"><span class="number">918.</span> <span class="word">Deer</span> <span class="pronoun">/dɪə(r)/</span> <span class="meaning">(rusa)</span></span>
+                <span class="word-item"><span class="number">919.</span> <span class="word">Leer</span> <span class="pronoun">/lɪə(r)/</span> <span class="meaning">(melirik)</span></span>
+                <span class="word-item"><span class="number">920.</span> <span class="word">Peer</span> <span class="pronoun">/pɪə(r)/</span> <span class="meaning">(teman sebaya)</span></span>
+                <span class="word-item"><span class="number">921.</span> <span class="word">Queer</span> <span class="pronoun">/kwɪə(r)/</span> <span class="meaning">(aneh)</span></span>
+                <span class="word-item"><span class="number">922.</span> <span class="word">Sneer</span> <span class="pronoun">/snɪə(r)/</span> <span class="meaning">(mencemooh)</span></span>
+                <span class="word-item"><span class="number">923.</span> <span class="word">Steer</span> <span class="pronoun">/stɪə(r)/</span> <span class="meaning">(menyetir)</span></span>
+                <span class="word-item"><span class="number">924.</span> <span class="word">Veneer</span> <span class="pronoun">/vəˈnɪə(r)/</span> <span class="meaning">(lapisan)</span></span>
+                <span class="word-item"><span class="number">925.</span> <span class="word">Zero</span> <span class="pronoun">/ˈzɪərəʊ/</span> <span class="meaning">(nol)</span></span>
+            </div>
+        </div>
+
+        <!-- Kelompok 18: Irama WA (Uo... Bibir membulat) - 926-950 -->
+        <div class="rhyme-card">
+            <div class="rhyme-title">🎵 Kelompok 18</div>
+            <div class="rhyme-sound">/wɒ/ /wɔː/ - WA (Uo...)</div>
+            <div class="word-list">
+                <span class="word-item"><span class="number">926.</span> <span class="word">Wallet</span> <span class="pronoun">/ˈwɒlɪt/</span> <span class="meaning">(dompet)</span></span>
+                <span class="word-item"><span class="number">927.</span> <span class="word">Wall</span> <span class="pronoun">/wɔːl/</span> <span class="meaning">(dinding)</span></span>
+                <span class="word-item"><span class="number">928.</span> <span class="word">Walk</span> <span class="pronoun">/wɔːk/</span> <span class="meaning">(berjalan)</span></span>
+                <span class="word-item"><span class="number">929.</span> <span class="word">Walnut</span> <span class="pronoun">/ˈwɔːlnʌt/</span> <span class="meaning">(kenari)</span></span>
+                <span class="word-item"><span class="number">930.</span> <span class="word">Walrus</span> <span class="pronoun">/ˈwɔːlrəs/</span> <span class="meaning">(anjing laut)</span></span>
+                <span class="word-item"><span class="number">931.</span> <span class="word">Wand</span> <span class="pronoun">/wɒnd/</span> <span class="meaning">(tongkat sihir)</span></span>
+                <span class="word-item"><span class="number">932.</span> <span class="word">Wander</span> <span class="pronoun">/ˈwɒndə(r)/</span> <span class="meaning">(berkelana)</span></span>
+                <span class="word-item"><span class="number">933.</span> <span class="word">Wasp</span> <span class="pronoun">/wɒsp/</span> <span class="meaning">(tawon)</span></span>
+                <span class="word-item"><span class="number">934.</span> <span class="word">Water</span> <span class="pronoun">/ˈwɔːtə(r)/</span> <span class="meaning">(air)</span></span>
+                <span class="word-item"><span class="number">935.</span> <span class="word">Watch</span> <span class="pronoun">/wɒtʃ/</span> <span class="meaning">(jam tangan)</span></span>
+                <span class="word-item"><span class="number">936.</span> <span class="word">Watt</span> <span class="pronoun">/wɒt/</span> <span class="meaning">(watt)</span></span>
+                <span class="word-item"><span class="number">937.</span> <span class="word">Watchman</span> <span class="pronoun">/ˈwɒtʃmən/</span> <span class="meaning">(penjaga)</span></span>
+                <span class="word-item"><span class="number">938.</span> <span class="word">Waterfall</span> <span class="pronoun">/ˈwɔːtəfɔːl/</span> <span class="meaning">(air terjun)</span></span>
+                <span class="word-item"><span class="number">939.</span> <span class="word">Waterfront</span> <span class="pronoun">/ˈwɔːtəfrʌnt/</span> <span class="meaning">(tepi air)</span></span>
+                <span class="word-item"><span class="number">940.</span> <span class="word">Waterproof</span> <span class="pronoun">/ˈwɔːtəpruːf/</span> <span class="meaning">(tahan air)</span></span>
+                <span class="word-item"><span class="number">941.</span> <span class="word">Wattage</span> <span class="pronoun">/ˈwɒtɪdʒ/</span> <span class="meaning">(daya listrik)</span></span>
+                <span class="word-item"><span class="number">942.</span> <span class="word">Waddle</span> <span class="pronoun">/ˈwɒdl/</span> <span class="meaning">(berjalan goyang)</span></span>
+                <span class="word-item"><span class="number">943.</span> <span class="word">Waffle</span> <span class="pronoun">/ˈwɒfl/</span> <span class="meaning">(wafel)</span></span>
+                <span class="word-item"><span class="number">944.</span> <span class="word">Wagon</span> <span class="pronoun">/ˈwæɡən/</span> <span class="meaning">(gerobak)</span></span>
+                <span class="word-item"><span class="number">945.</span> <span class="word">Wake</span> <span class="pronoun">/weɪk/</span> <span class="meaning">(bangun)</span></span>
+                <span class="word-item"><span class="number">946.</span> <span class="word">Waken</span> <span class="pronoun">/ˈweɪkən/</span> <span class="meaning">(membangunkan)</span></span>
+                <span class="word-item"><span class="number">947.</span> <span class="word">Wallop</span> <span class="pronoun">/ˈwɒləp/</span> <span class="meaning">(memukul)</span></span>
+                <span class="word-item"><span class="number">948.</span> <span class="word">Wallow</span> <span class="pronoun">/ˈwɒləʊ/</span> <span class="meaning">(berguling-guling)</span></span>
+                <span class="word-item"><span class="number">949.</span> <span class="word">Waltz</span> <span class="pronoun">/wɔːlts/</span> <span class="meaning">(tari waltz)</span></span>
+                <span class="word-item"><span class="number">950.</span> <span class="word">Wampum</span> <span class="pronoun">/ˈwɒmpəm/</span> <span class="meaning">(manik-manik)</span></span>
+            </div>
+        </div>
+
+        <!-- Kelompok 19: Irama OO Pendek (U... Cepat) - 951-975 -->
+        <div class="rhyme-card">
+            <div class="rhyme-title">🎵 Kelompok 19</div>
+            <div class="rhyme-sound">/ʊ/ - OO Pendek (U cepat)</div>
+            <div class="word-list">
+                <span class="word-item"><span class="number">951.</span> <span class="word">Cook</span> <span class="pronoun">/kʊk/</span> <span class="meaning">(memasak)</span></span>
+                <span class="word-item"><span class="number">952.</span> <span class="word">Look</span> <span class="pronoun">/lʊk/</span> <span class="meaning">(melihat)</span></span>
+                <span class="word-item"><span class="number">953.</span> <span class="word">Hook</span> <span class="pronoun">/hʊk/</span> <span class="meaning">(kait)</span></span>
+                <span class="word-item"><span class="number">954.</span> <span class="word">Book</span> <span class="pronoun">/bʊk/</span> <span class="meaning">(buku)</span></span>
+                <span class="word-item"><span class="number">955.</span> <span class="word">Shook</span> <span class="pronoun">/ʃʊk/</span> <span class="meaning">(gemetar)</span></span>
+                <span class="word-item"><span class="number">956.</span> <span class="word">Brook</span> <span class="pronoun">/brʊk/</span> <span class="meaning">(sungai kecil)</span></span>
+                <span class="word-item"><span class="number">957.</span> <span class="word">Crook</span> <span class="pronoun">/krʊk/</span> <span class="meaning">(penjahat)</span></span>
+                <span class="word-item"><span class="number">958.</span> <span class="word">Rookie</span> <span class="pronoun">/ˈrʊki/</span> <span class="meaning">(pemula)</span></span>
+                <span class="word-item"><span class="number">959.</span> <span class="word">Cookie</span> <span class="pronoun">/ˈkʊki/</span> <span class="meaning">(kue kering)</span></span>
+                <span class="word-item"><span class="number">960.</span> <span class="word">Goodly</span> <span class="pronoun">/ˈɡʊdli/</span> <span class="meaning">(cukup besar)</span></span>
+                <span class="word-item"><span class="number">961.</span> <span class="word">Goodbye</span> <span class="pronoun">/ɡʊdˈbaɪ/</span> <span class="meaning">(selamat tinggal)</span></span>
+                <span class="word-item"><span class="number">962.</span> <span class="word">Goodness</span> <span class="pronoun">/ˈɡʊdnəs/</span> <span class="meaning">(kebaikan)</span></span>
+                <span class="word-item"><span class="number">963.</span> <span class="word">Footstep</span> <span class="pronoun">/ˈfʊtstep/</span> <span class="meaning">(langkah kaki)</span></span>
+                <span class="word-item"><span class="number">964.</span> <span class="word">Footprint</span> <span class="pronoun">/ˈfʊtprɪnt/</span> <span class="meaning">(jejak kaki)</span></span>
+                <span class="word-item"><span class="number">965.</span> <span class="word">Woodcut</span> <span class="pronoun">/ˈwʊdkʌt/</span> <span class="meaning">(ukiran kayu)</span></span>
+                <span class="word-item"><span class="number">966.</span> <span class="word">Woodman</span> <span class="pronoun">/ˈwʊdmən/</span> <span class="meaning">(penebang kayu)</span></span>
+                <span class="word-item"><span class="number">967.</span> <span class="word">Woodland</span> <span class="pronoun">/ˈwʊdlənd/</span> <span class="meaning">(hutan)</span></span>
+                <span class="word-item"><span class="number">968.</span> <span class="word">Woody</span> <span class="pronoun">/ˈwʊdi/</span> <span class="meaning">(seperti kayu)</span></span>
+                <span class="word-item"><span class="number">969.</span> <span class="word">Woolen</span> <span class="pronoun">/ˈwʊlən/</span> <span class="meaning">(dari wol)</span></span>
+                <span class="word-item"><span class="number">970.</span> <span class="word">Woolly</span> <span class="pronoun">/ˈwʊli/</span> <span class="meaning">(berbulu)</span></span>
+                <span class="word-item"><span class="number">971.</span> <span class="word">Fully</span> <span class="pronoun">/ˈfʊli/</span> <span class="meaning">(sepenuhnya)</span></span>
+                <span class="word-item"><span class="number">972.</span> <span class="word">Puller</span> <span class="pronoun">/ˈpʊlə(r)/</span> <span class="meaning">(penarik)</span></span>
+                <span class="word-item"><span class="number">973.</span> <span class="word">Pulley</span> <span class="pronoun">/ˈpʊli/</span> <span class="meaning">(katrol)</span></span>
+                <span class="word-item"><span class="number">974.</span> <span class="word">Bullet</span> <span class="pronoun">/ˈbʊlɪt/</span> <span class="meaning">(peluru)</span></span>
+                <span class="word-item"><span class="number">975.</span> <span class="word">Bullion</span> <span class="pronoun">/ˈbʊliən/</span> <span class="meaning">(emas batangan)</span></span>
+            </div>
+        </div>
+
+        <!-- Kelompok 20: Irama S/Z di Akhir - 976-1000 -->
+        <div class="rhyme-card">
+            <div class="rhyme-title">🎵 Kelompok 20</div>
+            <div class="rhyme-sound">/s/ vs /z/ - Desis vs Getar di Akhir</div>
+            <div class="word-list">
+                <span class="word-item"><span class="number">976.</span> <span class="word">Trees</span> <span class="pronoun">/triːz/</span> <span class="meaning">(pohon-pohon)</span></span>
+                <span class="word-item"><span class="number">977.</span> <span class="word">Bees</span> <span class="pronoun">/biːz/</span> <span class="meaning">(lebah-lebah)</span></span>
+                <span class="word-item"><span class="number">978.</span> <span class="word">Knees</span> <span class="pronoun">/niːz/</span> <span class="meaning">(lutut-lutut)</span></span>
+                <span class="word-item"><span class="number">979.</span> <span class="word">Keys</span> <span class="pronoun">/kiːz/</span> <span class="meaning">(kunci-kunci)</span></span>
+                <span class="word-item"><span class="number">980.</span> <span class="word">Days</span> <span class="pronoun">/deɪz/</span> <span class="meaning">(hari-hari)</span></span>
+                <span class="word-item"><span class="number">981.</span> <span class="word">Ways</span> <span class="pronoun">/weɪz/</span> <span class="meaning">(cara-cara)</span></span>
+                <span class="word-item"><span class="number">982.</span> <span class="word">Plays</span> <span class="pronoun">/pleɪz/</span> <span class="meaning">(bermain)</span></span>
+                <span class="word-item"><span class="number">983.</span> <span class="word">Boys</span> <span class="pronoun">/bɔɪz/</span> <span class="meaning">(anak laki)</span></span>
+                <span class="word-item"><span class="number">984.</span> <span class="word">Toys</span> <span class="pronoun">/tɔɪz/</span> <span class="meaning">(mainan)</span></span>
+                <span class="word-item"><span class="number">985.</span> <span class="word">Joys</span> <span class="pronoun">/dʒɔɪz/</span> <span class="meaning">(kegembiraan)</span></span>
+                <span class="word-item"><span class="number">986.</span> <span class="word">Girls</span> <span class="pronoun">/ɡɜːrlz/</span> <span class="meaning">(gadis-gadis)</span></span>
+                <span class="word-item"><span class="number">987.</span> <span class="word">Birds</span> <span class="pronoun">/bɜːrdz/</span> <span class="meaning">(burung-burung)</span></span>
+                <span class="word-item"><span class="number">988.</span> <span class="word">Words</span> <span class="pronoun">/wɜːrdz/</span> <span class="meaning">(kata-kata)</span></span>
+                <span class="word-item"><span class="number">989.</span> <span class="word">Friends</span> <span class="pronoun">/frendz/</span> <span class="meaning">(teman-teman)</span></span>
+                <span class="word-item"><span class="number">990.</span> <span class="word">Hands</span> <span class="pronoun">/hændz/</span> <span class="meaning">(tangan-tangan)</span></span>
+                <span class="word-item"><span class="number">991.</span> <span class="word">Minds</span> <span class="pronoun">/maɪndz/</span> <span class="meaning">(pikiran)</span></span>
+                <span class="word-item"><span class="number">992.</span> <span class="word">Winds</span> <span class="pronoun">/wɪndz/</span> <span class="meaning">(angin)</span></span>
+                <span class="word-item"><span class="number">993.</span> <span class="word">Lands</span> <span class="pronoun">/lændz/</span> <span class="meaning">(tanah)</span></span>
+                <span class="word-item"><span class="number">994.</span> <span class="word">Sounds</span> <span class="pronoun">/saʊndz/</span> <span class="meaning">(suara-suara)</span></span>
+                <span class="word-item"><span class="number">995.</span> <span class="word">Kinds</span> <span class="pronoun">/kaɪndz/</span> <span class="meaning">(jenis-jenis)</span></span>
+                <span class="word-item"><span class="number">996.</span> <span class="word">Finds</span> <span class="pronoun">/faɪndz/</span> <span class="meaning">(menemukan)</span></span>
+                <span class="word-item"><span class="number">997.</span> <span class="word">Gives</span> <span class="pronoun">/ɡɪvz/</span> <span class="meaning">(memberi)</span></span>
+                <span class="word-item"><span class="number">998.</span> <span class="word">Lives</span> <span class="pronoun">/lɪvz/</span> <span class="meaning">(kehidupan)</span></span>
+                <span class="word-item"><span class="number">999.</span> <span class="word">Loves</span> <span class="pronoun">/lʌvz/</span> <span class="meaning">(mencintai)</span></span>
+                <span class="word-item"><span class="number">1000.</span> <span class="word">Moves</span> <span class="pronoun">/muːvz/</span> <span class="meaning">(bergerak)</span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="tip-box">
+        🎯 SELAMAT! KAMU TELAH MENCAPAI 1000 KATA! <br>
+        Latihan rutin 15 menit sehari akan membuat pengucapanmu LANCAR dan ALAMI. <br>
+        Fokus pada KESAMAAN BUNYI dan PERBEDAAN SUARA S/Z di akhir kata!
+    </div>
+
+    <div class="footer">
+        ⚡ TOTAL 1000 KATA • 20 KELOMPOK IRAMA • MASTERY COMPLETE ⚡
+    </div>
+</div>
+
+<script>
+// Efek klik untuk highlight
+document.querySelectorAll('.word-item').forEach(item => {
+    item.addEventListener('click', function() {
+        this.style.backgroundColor = '#ffd700';
+        this.style.color = '#000';
+        setTimeout(() => {
+            this.style.backgroundColor = '';
+            this.style.color = '';
+        }, 300);
+    });
+});
+</script>
+
+</body>
+</html>
